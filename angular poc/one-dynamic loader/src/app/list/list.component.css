@@ -1,0 +1,8 @@
+ul li{
+    height: 20px;
+    background:skyblue;
+    border: 1px solid blue;
+    width:100%;
+    list-style: none;
+    text-align: center;
+}

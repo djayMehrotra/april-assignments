@@ -1,0 +1,7 @@
+<div class="show-component wrapper">
+  <h3>Dynamic Component</h3>
+    <div (drop)="drop($event)" (dragover)="allowDrop($event)">
+      <ng-template ad-host></ng-template>
+    </div>
+  <router-outlet></router-outlet>
+</div>

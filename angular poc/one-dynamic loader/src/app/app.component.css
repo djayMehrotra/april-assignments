@@ -1,0 +1,11 @@
+.app-root{
+    background: greenyellow;
+    display: flex;
+}
+
+.drop-area{
+    width:70%;
+}
+.list-area{
+    width:25%;
+}

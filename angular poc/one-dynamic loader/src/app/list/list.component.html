@@ -1,0 +1,12 @@
+<!-- <div class="wrapper col-4">
+  <ul>
+    <li><a routerLink='/header'>Header</a></li>
+    <li><a routerLink='/button'>Button</a></li>
+    <li><a routerLink='/textbox'>TextBox</a></li>
+  </ul>
+</div> -->
+<div class="col-4">
+  <ul>
+    <li *ngFor="let item of listComp; let idx = index" draggable="true" (dragstart)="drag($event, idx)"><a>{{item.data.name}}</a></li>
+  </ul>
+</div>
