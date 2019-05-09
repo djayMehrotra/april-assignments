@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let user of usersData'>
+        <td>
+          {{user.name}}
+        </td>
+        <td>
+          {{user.age}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<div *ngIf="toggleFlag; else elseBlock">I am truee!!!</div>
+<ng-template #elseBlock>I am false!!!</ng-template>
+<div>
+  <button (click)="changeText()">Change ME</button>
+</div>
+</div>
