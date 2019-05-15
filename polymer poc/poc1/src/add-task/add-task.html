@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../src/show-list/show-list.html">
+<dom-module id="add-task">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>{{title}}</h2>
+    <input type="text" name="searchBox" value="{{itemValue::input}}" id="searchBox">
+    <div><button type="submit" on-tap="addItems">Add</button></div>
+    <h1>{{fullName}}</h1>
+    <show-list task-list="{{taskList}}"></show-list>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'add-task',
+
+      properties: {
+        title: {
+          type: String,
+          value: 'Add tasks',
+        },
+        taskList: {
+          type: Array,
+          observer: '_listChange'
+        },
+        itemValue: {
+          type: String,
+        }
+      },
+      computeFullName: function(firstName, lastName) {
+        return firstName + lastName;
+      },
+      addItems: function(){
+        console.log(this.itemValue);
+        this.push('taskList', {action: this.itemValue});
+        alert('Task added');
+        console.log(this.taskList);
+      },
+      ready: function(){
+          this.taskList = [
+              {action: 'buy fruits'},
+              {action: 'learn polymer'}
+          ]
+      }
+    });
+  </script>
+</dom-module>

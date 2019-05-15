@@ -1,0 +1,23 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="show-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Showing list</h2>
+    <ul>
+        <template is="dom-repeat" items="{{taskList}}">
+            <li>{{item.action}}</li>
+        </template>
+    </ul>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'show-list'
+    });
+  </script>
+</dom-module>
