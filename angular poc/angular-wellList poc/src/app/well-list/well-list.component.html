@@ -1,0 +1,24 @@
+<ng-container *ngIf="showWellDataFlag" >
+    <div class='container'>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of wellData">
+              <td [ngStyle]="{'color': 'darkred'}">{{data.name}}</td>
+              <td [ngClass]="data.type === 'esp' ? 'bg-green' : 'bg-pink'">{{data.type}}</td>
+              <td [ngStyle]="{'color': 'red', 'cursor': 'pointer'}" (click)="loadWellForm(data)">{{data.sourceKey}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</ng-container>
+  
+<ng-container *ngIf="!showWellDataFlag">
+    <app-well (addWellEvent)='addWellData($event)'></app-well>
+</ng-container>

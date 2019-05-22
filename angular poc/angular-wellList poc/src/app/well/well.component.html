@@ -1,0 +1,21 @@
+<div class="container border">
+  <h1>Add Well</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input #name type="text" class="form-control" id="name" required>
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input #type type="text" class="form-control" id="type" required>
+    </div>
+    <div class="form-group">
+        <label for="sourceKey">SourceKey</label>
+        <input #sourceKey type="text" class="form-control" id="sourceKey" readonly>
+      </div>
+    <button type='button' (click)="addNewData()" class="btn btn-success">Add</button>
+  </form>
+  <div *ngIf="validationMessage" class="alert alert-danger">
+      {{validationMessage}}
+  </div>
+</div>
